@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizar.js"></script>
+    <script src="./js/eliminar.js"></script>
+    <link rel="stylesheet" href="css/stylecona.css">
+    <title>Consultar vehiculo</title>
+</head>
+<body>
+    <nav class="menu">
+        <a href="/menuc" class="item">Volver</a>
+        <a href="/cerrar" class="item">Cerrar sesion</a>
+        <a href="" class="item"><p><%=uss%></p></a>
+        
+
+        <div class="back-menu"></div>
+    </nav>
+ <section class="conoce">
+    <h2 class="titulo">Vehiculos disponibles</h2>   
+ <form action="" name="frm" id="frm">
+    <table class="table2">
+        <thead>
+            <tr>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Estado</th>
+                <th>Precio</th>
+                <th>Nombre vendedor</th>
+                <th>Apellido vendedor</th>
+                <th>Telefono vendedor</th>
+            
+            </tr>
+        </thead> 
+        <tbody>
+            <% datos.forEach(function(datos){%>
+                
+                <tr>
+                    <input type="hidden"  value="<%=datos.catid%>"      name="catid"      id="ca"        class="ca"  >
+                    <input type="hidden"  value="<%=datos.datid%>"      name="datid"      id="da"        class="da"  >
+                    <td><input type="text"  value="<%=datos.vehmod%>"   name="vehmod"     id="mod"       class="mod"  ></td>
+                    <td><input type="text"  value="<%=datos.vehcol%>"   name="vehcol"     id="col"       class="col"  ></td>
+                    <td><input type="text"  value="<%=datos.vehest%>"   name="vehest"     id="est"       class="est"  ></td>
+                    <td><input type="text"  value="<%=datos.vehpre%>"   name="vehpre"    id="pre"       class="pre"  ></td>
+                    <td><input type="text"  value="<%=datos.datnom%>"   name="datnom"    id="nom"       class="nom"  ></td>
+                    <td><input type="text"  value="<%=datos.datape%>"   name="datape"    id="ape"       class="ape"  ></td>
+                    <td><input type="text"  value="<%=datos.dattel%>"   name="dattel"    id="tel"       class="tel"  ></td>
+                    
+                    
+                </tr>            
+            <%})%>
+        </tbody>    
+
+    </table>    
+
+ </form>
+</section>
+   
+</html>
+</body>
+</html>

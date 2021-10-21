@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizar.js"></script>
+    <script src="./js/eliminar.js"></script>
+    <link rel="stylesheet" href="css/styledaa.css">
+    <title>Actualizar datos</title>
+</head>
+<body>
+    <nav class="menu">
+        <a href="/regsve" class="item">Registrar vehiculo</a>
+        <a href="/cerrar" class="item">Cerrar sesion</a>
+        <a href="" class="item"><p><%=uss%></p></a>
+        
+
+        <div class="back-menu"></div>
+    </nav>
+ <section class="conoce">
+    <h2 class="titulo">Actualiza tus datos</h2>   
+ <form action="" name="frm" id="frm">
+    <table class="table2">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>Actualizar</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <% datos.forEach(function(datos){%>
+                
+                <tr>
+                    <input type="hidden"  value="<%=datos.usuid%>"      name="usuid"      id="us"       class="us"  >
+                    <td><input type="text"  value="<%=datos.datnom%>"   name="datnom"     id="dno"       class="dno"  ></td>
+                    <td><input type="text"  value="<%=datos.datape%>"   name="datape"     id="dap"       class="dap"  ></td>
+                    <td><input type="text"  value="<%=datos.dattel%>"   name="dattel"     id="dte"       class="dte"  ></td>
+                    <td><input type="text"  value="<%=datos.datcorr%>"  name="datcorr"    id="dco"       class="dco"  ></td>
+                    
+                    
+                 
+                    <td><input type="submit"  value="actualizar" name="act" id="act"   class="act"   ></td>
+                </tr>            
+            <%})%>
+        </tbody>    
+
+    </table>    
+
+ </form>
+</section>
+   
+</html>
+</body>
+</html>

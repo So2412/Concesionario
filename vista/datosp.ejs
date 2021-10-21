@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizar.js"></script>
+    <script src="./js/eliminar.js"></script>
+    <link rel="stylesheet" href="css/styleda.css">
+    <title>Usuarios</title>
+</head>
+<body>
+    <body>
+   
+        <nav class="menu">
+            <a href="/menua" class="item">Volver al menu</a>
+            <a href="/usuario" class="item">Registrar un usuario</a>
+            <a href="/cerrar" class="item">Cerrar sesion</a>
+            <a href="" class="item"><p><%=uss%></p></a>
+
+            <div class="back-menu"></div>
+        </nav>
+
+
+
+      
+            <div class="usuarios-box">
+                <h1>Datos personales</h1>
+                <form action="/frminsertarp" method="POST">
+                    <!--Id datos-->
+                    <label for="iddatos">Id datos</label>
+                    <input type="text" name="datid" placeholder="Ingrese id de datos">
+
+                    <!--Id rol-->
+                    <label for="idusuario">Id usuario</label>
+                    <input type="text"  name="usuid" placeholder="Ingrese id de usuario">
+
+                     <!--nombre-->
+                     <label for="nombre">Nombre</label>
+                     <input type="text" name="datnom" placeholder="Ingrese nombre">
+        
+                    <!--apellido-->
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="datape" placeholder="Ingrese apellido">
+
+                    <!--Tipo id-->
+                    <label for="tipo">Tipo de identificacion</label>
+                    <input type="text" name="datipoid" placeholder="Ingrese tipo de identificacion">
+
+                    
+                    <!--Num id-->
+                    <label for="numid">Numero de identificacion</label>
+                    <input type="text" name="datnumid" placeholder="Ingrese numero de identificacion">
+
+                    <!--Telefono-->
+                    <label for="Telefono">Telefono</label>
+                    <input type="text" name="dattel" placeholder="Ingrese numero de telefono">
+
+                    
+                    <!--correo-->
+                    <label for="correo">Correo</label>
+                    <input type="email" name="datcorr" placeholder="Ingrese correo">
+         
+        
+                     <input  type="submit"  value="Ingresar"   >
+                </form>
+            </div>    
+                
+    </body>
+ <form action="" name="frm" id="frm">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id datos</th>
+                <th>Id usuario</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>T.I.</th>
+                <th>N.I.</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <% datos.forEach(function(datos){%>
+                
+                <tr>
+                    <td><input type="text"  value="<%=datos.datid%>"     name="datid"     id="did"       class="did"  ></td>
+                    <td><input type="text"  value="<%=datos.usuid%>"     name="usuid"     id="uid"       class="uid"  ></td>
+                    <td><input type="text"  value="<%=datos.datnom%>"    name="datnom"    id="nom"       class="nom"  ></td>
+                    <td><input type="text"  value="<%=datos.datape%>"    name="datape"    id="ape"       class="ape"  ></td>
+                    <td><input type="text"  value="<%=datos.datipoid%>"  name="datipoid"  id="tid"       class="tid"  ></td>
+                    <td><input type="text"  value="<%=datos.datnumid%>"  name="datnumid"  id="nid"       class="nid"  ></td>
+                    <td><input type="text"  value="<%=datos.dattel%>"    name="dattel"    id="tel"       class="tel"  ></td>
+                    <td><input type="text"  value="<%=datos.datcorr%>"   name="datcorr"   id="cor"       class="cor"  ></td>
+                    
+                 
+                    <td><input type="submit"  value="actualizar" name="btnactu" id="btnactu"   class="btnactu"   ></td>
+                    <td><input type="submit"  value="eliminar "  name="btnelim" id="btnelim"   class="btnelim"   ></td>
+                </tr>            
+            <%})%>
+        </tbody>    
+
+    </table>    
+
+ </form>
+
+   
+</html>
+</body>
+</html>

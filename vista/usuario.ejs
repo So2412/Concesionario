@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizar.js"></script>
+    <script src="./js/eliminar.js"></script>
+    <link rel="stylesheet" href="css/styleus.css">
+    <title>Usuarios</title>
+</head>
+<body>
+    <body>
+   
+        <nav class="menu">
+            <a href="/menua" class="item">Volver a menu</a>
+            <a href="/datosp" class="item">Datos personales</a>
+            <a href="/cerrar" class="item">Cerrar sesion</a>
+            <a href="" class="item"><p><%=uss%></p></a>
+
+            <div class="back-menu"></div>
+        </nav>
+
+
+
+      
+            <div class="usuarios-box">
+                <h1>Usuarios</h1>
+                <form action="/frminsertar" method="POST">
+                    <!--Id usuario-->
+                    <label for="documento">Id Usuario</label>
+                    <input type="text" name="usuid" placeholder="Ingrese id de usuario">
+
+                    <!--Id rol-->
+                    <label for="nombre">Id rol</label>
+                    <input type="text"  name="rolid" placeholder="Ingrese id de rol">
+
+                     <!--Usuario-->
+                     <label for="rol">Usuario</label>
+                     <input type="text" name="usulog" placeholder="Ingrese usuario">
+        
+                    <!--Contraseña-->
+                    <label for="contraseña">Contraseña</label>
+                    <input type="password" name="usucon" placeholder="Ingrese contraseña">
+
+                    <!--Rol-->
+                    <label for="rol">Rol</label>
+                    <input type="text" name="roltip" placeholder="Ingrese rol">
+         
+        
+                     <input  type="submit"  value="Ingresar"   >
+                </form>
+            </div>    
+                
+    </body>
+ <form action="" name="frm" id="frm">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id usuario</th>
+                <th>Id rol</th>
+                <th>Usuario</th>
+                <th>Contraseña</th>
+                <th>Rol</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <% datos.forEach(function(datos){%>
+                
+                <tr>
+                    <td><input type="text"  value="<%=datos.usuid%>"   name="usuid"     id="usid"       class="usid"  ></td>
+                    <td><input type="text"  value="<%=datos.rolid%>"   name="rolid"     id="roid"       class="roid"  ></td>
+                    <td><input type="text"  value="<%=datos.usulog%>"  name="usulog"    id="uslo"       class="uslo"  ></td>
+                    <td><input type="text"  value="<%=datos.usucon%>"  name="usucon"    id="usco"       class="usco"  ></td>
+                    <td><input type="text"  value="<%=datos.roltip%>"  name="roltip"    id="roti"       class="roti" ></td>
+                    
+                 
+                    <td><input type="submit"  value="actualizar" name="btnact" id="btnact"   class="btnact"   ></td>
+                    <td><input type="submit"  value="eliminar "  name="btneli" id="btneli"   class="btneli"   ></td>
+                </tr>            
+            <%})%>
+        </tbody>    
+
+    </table>    
+
+ </form>
+
+   
+</html>
+</body>
+</html>

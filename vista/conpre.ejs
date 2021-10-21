@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylecon.css">
+    <title>Consultar por precio</title>
+</head>
+<body>
+    <nav class="menu">
+        <a href="/menub" class="item">Volver al menu</a>
+        <a href="/cerrar" class="item">Cerrar sesion</a>
+        <a href="" class="item"><p><%=uss%></p></a>
+        
+
+        <div class="back-menu"></div>
+    </nav>
+    <div class="registra-box">
+        <div class="usuarios-box">
+            <h1>Consultar </h1>
+        <form action="/filtro" method="POST">
+            <select class="controls" name="categoria" id="categoria"></select>
+            <% datos.forEach(function(datos){%>
+                            
+                <option class="controls" value="<%=datos.catid%>"><%=datos.cattipo%></option>     
+            <%})%>
+
+            
+            <input class="maximo" name="maximo" type="number" placeholder="Valor maximo" aria-label="search">
+            <input class="minimo" name="minimo" type="number" placeholder="Valor minimo" aria-label="search">
+
+            <button class="btn" type="submit">Consultar</button>
+        </form>
+        </div>
+       </div> 
+       <form action="" name="frm" id="frm">
+        <table class="table2">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Id datos</th>
+                    <th>Numero categoria</th>
+                    <th>Modelo</th>
+                    <th>Marca </th>
+                    <th>Estado</th>
+                    <th>Precio</th>
+                    <th>Color</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <% datos.forEach(function(datos){%>
+                    
+                    <tr>
+                        <td><input type="text"  value="<%=datos.vehplaca%>"       name="vehplaca"       id="doc"       class="doc"  ></td>
+                        <td><input type="text"  value="<%=datos.datid%>"          name="datid"       id="nom"       class="nom"  ></td>
+                        <td><input type="text"  value="<%=datos.catid%>"          name="catid"       id="ape"       class="ape"  ></td>
+                        <td><input type="text"  value="<%=datos.vehmod%>"         name="vehmod"    id="cor"       class="cor"  ></td>
+                        <td><input type="text"  value="<%=datos.vehmar%>"         name="vehmar"      id="cel"       class="cel" ></td>
+                        <td><input type="text"  value="<%=datos.vehest%>"         name="vehest"         id="sex"       class="sex"  ></td>
+                        <td><input type="text"  value="<%=datos.vehpre%>"         name="vehpre"  id="fec"       class="fec"  ></td>
+                        <td><input type="text"  value="<%=datos.vehcol%>"         name="vehcol"  id="fec"       class="fec"  ></td>
+
+                    </tr>            
+                <%})%>
+            </tbody>    
+    
+        </table>    
+    
+     </form>
+    
+</body>
+</html>

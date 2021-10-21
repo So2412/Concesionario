@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/cliactualizar.js"></script>
+    <script src="./js/clieliminar.js"></script>
+    <link rel="stylesheet" href="css/stylere.css">
+    <title>Registrar vehiculo</title>
+</head>
+<body>
+    <nav class="menu">
+        <a href="/datactu" class="item">Actualizar datos</a>
+        <a href="/cerrar" class="item">Cerrar sesion</a>
+        <a href="/menua" class="item">Volver al menu principal</p></a>
+        
+
+        <div class="back-menu"></div>
+    </nav>
+            <div class="registra-box">
+                <h1>Registrar vehiculo</h1>
+                <form action="/frminsertarve" method="POST">
+                    <!--Placa vehiculo-->
+                    <label for="documento">Placa</label>
+                    <input type="text"  name="vehplaca" placeholder="Ingrese placa">
+
+                    <!--datid-->
+                    <label for="nombre">Id datos</label>
+                    <input type="text" name="datid" placeholder="Ingrese id de dato">
+
+                     <!--datid-->
+                     <label for="nombre">Numero categoria de vehiculo</label>
+                     <input type="text" name="catid" placeholder="1.Automovil-2.Camioneta-3.Camion-4.Furgoneta-5.Bus">
+        
+                    <!--catid-->
+                    <label for="apellido">Modelo</label>
+                    <input type="text" name="vehmod" placeholder="Ingrese modelo">
+                    
+                    <!--marca-->
+                    <label for="correo">Marca</label>
+                    <input type="text" name="vehmar" placeholder="Ingrese marca">
+                    
+                    <!--estado-->
+                    <label for="celular">Estado</label>
+                    <input type="text" name="vehest" placeholder="Ingrese nuevo o usado">
+
+                    <!--precio-->
+                    <label for="sexo">Precio</label>
+                    <input type="text" name="vehpre" placeholder="Ingrese precio">
+
+                    <!--color-->
+                    <label for="fecha">Color</label>
+                    <input type="text" name="vehcol" placeholder="Ingrese color">
+         
+        
+                    <input type="submit" value="Ingresar">
+                </form>
+               </div> 
+             </body>
+             <form action="" name="frm" id="frm">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Id datos</th>
+                            <th>Numero categoria</th>
+                            <th>Modelo</th>
+                            <th>Marca </th>
+                            <th>Estado</th>
+                            <th>Precio</th>
+                            <th>Color</th>
+
+                        </tr>
+                    </thead> 
+                    <tbody>
+                        <% datos.forEach(function(datos){%>
+                            
+                            <tr>
+                                <td><input type="text"  value="<%=datos.vehplaca%>"       name="vehplaca"       id="doc"       class="doc"  ></td>
+                                <td><input type="text"  value="<%=datos.datid%>"          name="datid"       id="nom"       class="nom"  ></td>
+                                <td><input type="text"  value="<%=datos.catid%>"          name="catid"       id="ape"       class="ape"  ></td>
+                                <td><input type="text"  value="<%=datos.vehmod%>"         name="vehmod"    id="cor"       class="cor"  ></td>
+                                <td><input type="text"  value="<%=datos.vehmar%>"         name="vehmar"      id="cel"       class="cel" ></td>
+                                <td><input type="text"  value="<%=datos.vehest%>"         name="vehest"         id="sex"       class="sex"  ></td>
+                                <td><input type="text"  value="<%=datos.vehpre%>"         name="vehpre"  id="fec"       class="fec"  ></td>
+                                <td><input type="text"  value="<%=datos.vehcol%>"         name="vehcol"  id="fec"       class="fec"  ></td>
+
+                            </tr>            
+                        <%})%>
+                    </tbody>    
+            
+                </table>    
+            
+             </form>
+            
+              
+</body>
+</html>
